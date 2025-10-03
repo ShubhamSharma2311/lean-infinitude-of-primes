@@ -11,4 +11,8 @@ namespace InfinitePrimes
 
 open Nat
 
+/-- `n! + 1` is never `1`, so it has a prime factor. -/
+lemma factorial_succ_ne_one (n : ℕ) : n ! + 1 ≠ 1 := by
+  sorry
+
 end InfinitePrimes
