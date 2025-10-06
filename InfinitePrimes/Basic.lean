@@ -20,4 +20,8 @@ lemma factorial_succ_ne_one (n : ℕ) : n ! + 1 ≠ 1 := by
 lemma minFac_prime_factorial_succ (n : ℕ) : (n ! + 1).minFac.Prime :=
   Nat.minFac_prime (factorial_succ_ne_one n)
 
+/-- Every prime below `n` divides `n!`, so it cannot divide `n! + 1`. -/
+lemma le_minFac_factorial_succ (n : ℕ) : n ≤ (n ! + 1).minFac := by
+  sorry
+
 end InfinitePrimes
