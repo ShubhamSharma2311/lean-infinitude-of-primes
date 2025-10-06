@@ -22,6 +22,12 @@ lemma minFac_prime_factorial_succ (n : ℕ) : (n ! + 1).minFac.Prime :=
 
 /-- Every prime below `n` divides `n!`, so it cannot divide `n! + 1`. -/
 lemma le_minFac_factorial_succ (n : ℕ) : n ≤ (n ! + 1).minFac := by
-  sorry
+  by_contra h
+  rw [not_le] at h
+  have hp := minFac_prime_factorial_succ n
+  have h1 : (n ! + 1).minFac ∣ n ! := Nat.dvd_factorial hp.pos h.le
+  have h2 : (n ! + 1).minFac ∣ n ! + 1 := Nat.minFac_dvd _
+  have h3 : (n ! + 1).minFac ∣ 1 := (Nat.dvd_add_right h1).mp h2
+  exact hp.one_lt.ne' (Nat.dvd_one.mp h3)
 
 end InfinitePrimes
