@@ -17,7 +17,7 @@ lemma factorial_succ_ne_one (n : ℕ) : n ! + 1 ≠ 1 := by
   omega
 
 /-- The least prime factor of `n! + 1` is prime. -/
-lemma minFac_prime_factorial_succ (n : ℕ) : (n ! + 1).minFac.Prime := by
-  sorry
+lemma minFac_prime_factorial_succ (n : ℕ) : (n ! + 1).minFac.Prime :=
+  Nat.minFac_prime (factorial_succ_ne_one n)
 
 end InfinitePrimes
