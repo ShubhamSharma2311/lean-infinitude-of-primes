@@ -30,4 +30,8 @@ lemma le_minFac_factorial_succ (n : ℕ) : n ≤ (n ! + 1).minFac := by
   have h3 : (n ! + 1).minFac ∣ 1 := (Nat.dvd_add_right h1).mp h2
   exact hp.one_lt.ne' (Nat.dvd_one.mp h3)
 
+/-- There is a prime at least as large as any given natural number. -/
+theorem exists_prime_ge (n : ℕ) : ∃ p, n ≤ p ∧ p.Prime := by
+  sorry
+
 end InfinitePrimes
