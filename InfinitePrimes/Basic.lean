@@ -34,4 +34,8 @@ lemma le_minFac_factorial_succ (n : ℕ) : n ≤ (n ! + 1).minFac := by
 theorem exists_prime_ge (n : ℕ) : ∃ p, n ≤ p ∧ p.Prime :=
   ⟨_, le_minFac_factorial_succ n, minFac_prime_factorial_succ n⟩
 
+/-- **Euclid's theorem.** The set of primes is infinite. -/
+theorem primes_infinite : {p : ℕ | p.Prime}.Infinite := by
+  sorry
+
 end InfinitePrimes
