@@ -36,6 +36,10 @@ theorem exists_prime_ge (n : ℕ) : ∃ p, n ≤ p ∧ p.Prime :=
 
 /-- **Euclid's theorem.** The set of primes is infinite. -/
 theorem primes_infinite : {p : ℕ | p.Prime}.Infinite := by
-  sorry
+  refine Set.infinite_of_not_bddAbove ?_
+  rintro ⟨b, hb⟩
+  obtain ⟨p, hle, hp⟩ := exists_prime_ge (b + 1)
+  have := hb hp
+  omega
 
 end InfinitePrimes
