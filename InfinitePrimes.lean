@@ -1,1 +1,2 @@
 import InfinitePrimes.Basic
+import InfinitePrimes.Examples
